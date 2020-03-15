@@ -48,7 +48,7 @@ jobs:
     - name: Deploy to GitHub pages
       uses: crazy-max/ghaction-github-pages@v1.3.0
       with:
-        repo: salseattle.github.io
+        repo: salseattle/salseattle.github.io
         target_branch: master
         keep_history: true
         build_dir: build
