@@ -16,9 +16,10 @@ jobs:
         node-version: '12.x'
     - name: Install dependencies
       run: npm install
-    # Commenting out until tests are added
-    # - name: Run tests
-    #   run: npm run test
+    - name: Run tests
+      run: npm run test
+      env:
+        CI: true
   build:
     runs-on: ubuntu-latest
     steps:
