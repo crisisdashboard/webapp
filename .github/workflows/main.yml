@@ -35,7 +35,7 @@ jobs:
     - name: Upload production build
       uses: actions/upload-artifact@v1
       with:
-        name: artifact
+        name: build
         path: build/
   deploy:
     runs-on: ubuntu-latest
@@ -44,9 +44,7 @@ jobs:
     - name: Download production build
       uses: actions/download-artifact@v1
       with:
-        name: artifact
-    - name: Debug LS
-      run: ls
+        name: build
     - name: Deploy to GitHub pages
       uses: crazy-max/ghaction-github-pages@v1.3.0
       with:
