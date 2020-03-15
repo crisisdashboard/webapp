@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Subtle Asian Life Seattle Web App
+
+![CI](https://github.com/salseattle/webapp/workflows/CI/badge.svg)
+
+**Note:** This is currently a work in progress. Stay tuned.
 
 ## Available Scripts
 
