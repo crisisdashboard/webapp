@@ -52,3 +52,5 @@ jobs:
         target_branch: master
         keep_history: true
         build_dir: build
+      env:
+        GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
