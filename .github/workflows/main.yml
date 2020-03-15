@@ -45,6 +45,8 @@ jobs:
       uses: actions/download-artifact@v1
       with:
         name: artifact
+    - name: Debug LS
+      run: ls
     - name: Deploy to GitHub pages
       uses: crazy-max/ghaction-github-pages@v1.3.0
       with:
