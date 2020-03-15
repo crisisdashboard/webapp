@@ -1,0 +1,51 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: Run tests
+      run: npm run test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: Install dependencies
+      run: npm install
+    - name: Create production build
+      run: npm run build
+    - name: Upload production build
+      uses: actions/upload-artifact@v1
+      with:
+        name: artifact
+        path: build/
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build, test]
+    steps:
+    - name: Download production build
+      uses: actions/download-artifact@v1
+      with:
+        name: artifact
+    - name: Deploy to GitHub pages
+      uses: crazy-max/ghaction-github-pages@v1.3.0
+      with:
+        repo: salseattle.github.io
+        target_branch: master
+        keep_history: true
+        build_dir: build
