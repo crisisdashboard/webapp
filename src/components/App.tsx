@@ -9,7 +9,7 @@ const App = () => {
   const mode = environment().isProduction() ? 'production' : 'development';
   return (
     <div>
-      <div>Hello SAL Seattle!</div>
+      <div>Hello!</div>
       <p>You are currently viewing in {mode} mode.</p>
     </div>
   );

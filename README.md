@@ -1,4 +1,4 @@
-# Subtle Asian Life Seattle Web App
+# Crisis Dashboard Web App
 
 ![CI](https://github.com/salseattle/webapp/workflows/CI/badge.svg)
 
